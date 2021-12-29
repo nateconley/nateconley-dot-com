@@ -1,0 +1,15 @@
+.postSections {
+
+	@media screen and (min-width: 992px) {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	> section {
+		margin-bottom: 20px;
+
+		@media screen and (min-width: 992px) {
+			width: calc(50% - 20px);
+		}
+	}
+}

@@ -1,0 +1,58 @@
+:root {
+	color: var(--color-black);
+	font-family: var(--font-pt);
+	font-size: 112.5%;
+	font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-crimson);
+	font-weight: var(--font-weight-heading);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+hr,
+ul {
+	margin: 0 0 1rem;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+p,
+li {
+	line-height: 1.6;
+}
+
+a {
+	color: var(--color-main);
+
+	&:focus,
+	&:hover {
+		color: var(--color-accent);
+	}
+}
+
+a,
+a svg,
+button,
+button svg {
+	transition: all 200ms ease-in-out;
+}
+
+hr {
+	border-color: var(--color-main);
+}

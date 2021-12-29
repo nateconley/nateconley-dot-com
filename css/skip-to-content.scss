@@ -1,0 +1,20 @@
+@use './mixins' as *;
+
+.skip-to-content {
+	margin: 0;
+
+	a {
+
+		&:not(:focus) {
+			@include a11y-hide();
+		}
+
+		&:focus {
+			background-color: var(--color-white);
+			padding: 10px;
+			position: absolute;
+			text-align: center;
+			width: 100%;
+		}
+	}
+}
