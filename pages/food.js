@@ -11,7 +11,7 @@ function Food( { posts } ) {
 	</div>;
 }
 
-Food.getInitialProps = async ( context ) => {
+Food.getInitialProps = async () => {
 
 	const { data } = await client.query( {
 		query: GET_FOOD,
@@ -21,7 +21,7 @@ Food.getInitialProps = async ( context ) => {
 	} );
 
 	return {
-		posts: data.posts.nodes,
+		posts: data.foods.nodes,
 	};
 }
 

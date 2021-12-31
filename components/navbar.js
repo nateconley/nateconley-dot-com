@@ -105,13 +105,13 @@ function Navbar() {
 				</button>
 				<ul>
 					<li>
-						<Link href="/food">
-							<a tabIndex={ open || ! isMobile ? "0" : "-1" }>Food</a>
+						<Link href="/code">
+							<a tabIndex={ open || ! isMobile ? "0" : "-1" }>Code</a>
 						</Link>
 					</li>
 					<li>
-						<Link href="/code">
-							<a tabIndex={ open || ! isMobile ? "0" : "-1" }>Code</a>
+						<Link href="/food">
+							<a tabIndex={ open || ! isMobile ? "0" : "-1" }>Food</a>
 						</Link>
 					</li>
 					<li>

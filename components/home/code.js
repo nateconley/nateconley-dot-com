@@ -8,7 +8,7 @@ function Code( { posts } ) {
 		<section>
 			<h3>Posts on Code</h3>
 			{ posts.map( post => {
-				return <Post title={ post.title } />
+				return <Post key={ post.id } title={ post.title } />
 			} ) }
 			<Link href="/code">
 				<a>View All Posts on Code</a>

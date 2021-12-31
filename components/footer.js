@@ -16,13 +16,13 @@ function Footer() {
 						</Link>
 					</li>
 					<li>
-						<Link href="/food">
-							<a>Food</a>
+						<Link href="/code">
+							<a>Code</a>
 						</Link>
 					</li>
 					<li>
-						<Link href="/code">
-							<a>Code</a>
+						<Link href="/food">
+							<a>Food</a>
 						</Link>
 					</li>
 					<li>

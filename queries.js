@@ -3,7 +3,7 @@ import { gql } from "@apollo/client";
 // Get code posts.
 const GET_CODE = gql`
 	query Code($num: Int!) {
-		posts(first: $num, where: {categoryId: 4}) {
+		posts(first: $num) {
 			nodes {
 				id
 				title
@@ -15,7 +15,7 @@ const GET_CODE = gql`
 // Get food posts.
 const GET_FOOD = gql`
 	query Food($num: Int!) {
-		posts(first: $num, where: {categoryId: 3}) {
+		foods(first: $num) {
 			nodes {
 				id
 				title

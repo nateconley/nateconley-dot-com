@@ -10,7 +10,7 @@ function Code( { posts } ) {
 	</div>;
 }
 
-Code.getInitialProps = async ( context ) => {
+Code.getInitialProps = async () => {
 
 	const { data } = await client.query( {
 		query: GET_CODE,
