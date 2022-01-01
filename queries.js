@@ -47,6 +47,7 @@ const GET_SINGLE_CODE = gql`
 			title
 			date
 			content
+			excerpt
 			featuredImage {
 				node {
 				altText
@@ -64,6 +65,7 @@ const GET_SINGLE_FOOD = gql`
 			title
 			date
 			content
+			excerpt
 			featuredImage {
 				node {
 				altText

@@ -18,10 +18,11 @@ function Single({ post }) {
 		<>
 			<Head>
 				<title>Nate Conley | { post.title }</title>
+				<meta name="description" content={ post.excerpt }/>
 			</Head>
 			<div className={ styles.post }>
 				<h1>{ post.title }</h1>
-				<p><date>{ dateString }</date></p>
+				<p>{ dateString }</p>
 				{ post.featuredImage.node.uri &&
 					<div className={ styles.featuredImage }>
 						<Image

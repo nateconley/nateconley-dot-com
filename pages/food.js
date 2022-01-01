@@ -4,13 +4,17 @@ import Head from 'next/head';
 import Post from '../components/Post';
 
 function Food( { posts } ) {
+
+	const title = 'Posts on Food';
+
 	return (
 		<>
 			<Head>
-				<title>Nate Conley | Posts on Food</title>
+				<title>Nate Conley | { title }</title>
+				<meta name="description" content={ title }/>
 			</Head>
 			<div>
-				<h1>Posts on Food</h1>
+				<h1>{ title }</h1>
 				<hr/>
 				{ posts.map( post => {
 					return (
@@ -26,7 +30,7 @@ function Food( { posts } ) {
 	);
 }
 
-Food.getInitialProps = async () => {
+export async function getStaticProps( context ) {
 
 	const { data } = await client.query( {
 		query: GET_FOOD,
@@ -36,7 +40,9 @@ Food.getInitialProps = async () => {
 	} );
 
 	return {
-		posts: data.foods.nodes,
+		props: {
+			posts: data.foods.nodes,
+		},
 	};
 }
 

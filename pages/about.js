@@ -6,6 +6,7 @@ function About() {
 		<>
 			<Head>
 				<title>Nate Conley | About</title>
+				<meta name="description" content="About Nate Conley"></meta>
 			</Head>
 			<div>
 				<h1>About Me</h1>

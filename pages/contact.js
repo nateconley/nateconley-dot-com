@@ -5,6 +5,7 @@ function Contact() {
 		<>
 			<Head>
 				<title>Nate Conley | About</title>
+				<meta name="description" content="Contact Nate Conley"/>
 			</Head>
 			<div>
 				<h1>Contact</h1>

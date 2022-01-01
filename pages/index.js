@@ -5,10 +5,14 @@ import { GET_CODE, GET_FOOD } from '../queries';
 import client from '../apollo-client';
 import Image from 'next/image';
 import heroImage from '../public/hero-image.png';
+import Head from 'next/head';
 
 function HomePage( { codePosts, foodPosts } ) {
 	return (
 	<>
+		<Head>
+			<meta name="description" content="Nate Conley is a Web Developer and Passionate Home Cook"/>
+		</Head>
 		<div className={ styles.hero }>
 			<Image
 				src={ heroImage }
@@ -30,7 +34,7 @@ function HomePage( { codePosts, foodPosts } ) {
 	);
 }
 
-HomePage.getInitialProps = async ( context ) => {
+export async function getStaticProps( context ) {
 
 	const codeQuery = await client.query( {
 		query: GET_CODE,
@@ -47,8 +51,10 @@ HomePage.getInitialProps = async ( context ) => {
 	} );
 
 	return {
-		codePosts: codeQuery.data.posts.nodes,
-		foodPosts: foodQuery.data.foods.nodes,
+		props: {
+			codePosts: codeQuery.data.posts.nodes,
+			foodPosts: foodQuery.data.foods.nodes,
+		},
 	};
 }
 

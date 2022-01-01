@@ -43,17 +43,17 @@ function Footer() {
 			<nav>
 				<ul>
 					<li>
-						<a href="https://www.linkedin.com/in/nate-conley-503464224/" target="_blank">
+						<a href="https://www.linkedin.com/in/nate-conley-503464224/" target="_blank" rel="me">
 							<LinkedIn/>
 						</a>
 					</li>
 					<li>
-						<a href="https://www.instagram.com/nate_conley123/" target="_blank">
+						<a href="https://www.instagram.com/nate_conley123/" target="_blank" rel="me">
 							<Instagram/>
 						</a>
 					</li>
 					<li>
-						<a href="https://github.com/nateconley" target="_blank">
+						<a href="https://github.com/nateconley" target="_blank" rel="me">
 							<GitHub/>
 						</a>
 					</li>
