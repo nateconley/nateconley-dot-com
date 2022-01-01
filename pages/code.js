@@ -5,7 +5,7 @@ import Post from '../components/Post';
 
 function Code( { posts } ) {
 
-	const title = 'Posts on Food';
+	const title = 'Posts on Code';
 
 	return (
 		<>
