@@ -1,16 +1,25 @@
 import Link from 'next/link';
-import Post from './Post';
+import Post from '../Post';
 
-function Food( { posts } ) {
+function Food( { posts, viewAllClassName } ) {
 	return (
 		<section>
 			<h3>Posts on Food</h3>
 			{ posts.map( post => {
-				return <Post key={ post.id } title={ post.title } />
+				return (
+					<Post
+						key={ post.id }
+						post={ post }
+						slugBase="food"
+						showExcerpt={ false }
+					/>
+				);
 			} ) }
-			<Link href="/food">
-				<a>View All Posts on Food</a>
-			</Link>
+			<p className={ viewAllClassName }>
+				<Link href="/food">
+					<a>View All Posts on Food</a>
+				</Link>
+			</p>
 		</section>
 	);
 }

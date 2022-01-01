@@ -1,9 +1,16 @@
+import Head from 'next/head';
+
 function Contact() {
 	return (
-		<div>
-			<h1>Contact</h1>
-			<p>Under construction...</p>
-		</div>
+		<>
+			<Head>
+				<title>Nate Conley | About</title>
+			</Head>
+			<div>
+				<h1>Contact</h1>
+				<p>Under construction...</p>
+			</div>
+		</>
 	);
 }
 

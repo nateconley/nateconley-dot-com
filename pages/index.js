@@ -22,8 +22,8 @@ function HomePage( { codePosts, foodPosts } ) {
 			<p>Welcome to my site. I'll share my experience writing code and cooking food at home.</p>
 			<hr />
 			<div className={ styles.postSections }>
-				<Code posts={ codePosts } />
-				<Food posts={ foodPosts } />
+				<Code posts={ codePosts } viewAllClassName={ styles.viewAll } />
+				<Food posts={ foodPosts } viewAllClassName={ styles.viewAll } />
 			</div>
 		</div>
 	</>

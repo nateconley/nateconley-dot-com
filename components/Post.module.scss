@@ -1,0 +1,36 @@
+.post {
+	background-color: var(--color-gray);
+	margin-bottom: 40px;
+	padding: var(--padding-default);
+
+	@media screen and (min-width: 768px) {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	// Our image container. It is possible that this is not rendered.
+	// Using nth-last-child ensures this width is not enforced.
+	> div:nth-last-child(2) {
+		margin-bottom: 20px;
+		text-align: center;
+
+		@media screen and (min-width: 768px) {
+			margin: {
+				bottom: 0;
+				right: 20px;
+			};
+			max-width: 300px;
+			width: calc(50% - 20px);
+		}
+	}
+
+	// Text container.
+	> div:nth-child(2) {
+
+		@media screen and (min-width: 768px) {
+			flex-grow: 1;
+			width: 50%;
+		}
+	}
+}

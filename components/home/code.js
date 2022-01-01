@@ -1,18 +1,25 @@
 import Link from 'next/link';
-import Post from './Post';
-import { homeCode } from '../../queries';
-import client from '../../apollo-client';
+import Post from '../Post';
 
-function Code( { posts } ) {
+function Code( { posts, viewAllClassName } ) {
 	return (
 		<section>
 			<h3>Posts on Code</h3>
 			{ posts.map( post => {
-				return <Post key={ post.id } title={ post.title } />
+				return (
+					<Post
+						key={ post.id }
+						post={ post }
+						slugBase="code"
+						showExcerpt={ false }
+					/>
+				);
 			} ) }
-			<Link href="/code">
-				<a>View All Posts on Code</a>
-			</Link>
+			<p className={ viewAllClassName }>
+				<Link href="/code">
+					<a>View All Posts on Code</a>
+				</Link>
+			</p>
 		</section>
 	);
 }

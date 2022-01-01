@@ -7,6 +7,14 @@ const GET_CODE = gql`
 			nodes {
 				id
 				title
+				slug
+				excerpt
+				featuredImage {
+					node {
+					altText
+					uri
+					}
+				}
 			}
 		}
 	}
@@ -19,9 +27,51 @@ const GET_FOOD = gql`
 			nodes {
 				id
 				title
+				slug
+				excerpt
+				featuredImage {
+					node {
+					altText
+					uri
+					}
+				}
 			}
 		}
 	}
 `;
 
-export { GET_CODE, GET_FOOD };
+// Get a code post.
+const GET_SINGLE_CODE = gql`
+	query SingleCode($slug: String!) {
+		postBy(slug: $slug) {
+			title
+			date
+			content
+			featuredImage {
+				node {
+				altText
+				uri
+				}
+			}
+		}
+	}
+`;
+
+// Get a food post.
+const GET_SINGLE_FOOD = gql`
+	query SingleFood($slug: String!) {
+		foodBy(uri: $slug) {
+			title
+			date
+			content
+			featuredImage {
+				node {
+				altText
+				uri
+				}
+			}
+		}
+	}
+`;
+
+export { GET_CODE, GET_FOOD, GET_SINGLE_CODE, GET_SINGLE_FOOD };
