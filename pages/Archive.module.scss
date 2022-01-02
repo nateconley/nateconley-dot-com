@@ -1,0 +1,25 @@
+.postList {
+
+	> article {
+		margin-bottom: 6rem;
+
+		&:last-child {
+			margin-bottom: 2rem;
+		}
+	}
+
+	// Reverse order image/text every other post in archive.
+	> article:nth-child(2n) {
+
+		> div:nth-last-child(2) {
+
+			@media screen and (min-width: 768px) {
+				margin: {
+					left: 20px;
+					right: 0;
+				}
+				order: 1;
+			}
+		}
+	}
+}

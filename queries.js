@@ -9,6 +9,7 @@ const GET_CODE = gql`
 				title
 				slug
 				excerpt
+				date
 				featuredImage {
 					node {
 					altText
@@ -29,6 +30,7 @@ const GET_FOOD = gql`
 				title
 				slug
 				excerpt
+				date
 				featuredImage {
 					node {
 					altText

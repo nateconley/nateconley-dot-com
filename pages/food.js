@@ -2,6 +2,7 @@ import client from '../apollo-client';
 import { GET_FOOD } from '../queries';
 import Head from 'next/head';
 import Post from '../components/Post';
+import styles from './Archive.module.scss';
 
 function Food( { posts } ) {
 
@@ -16,15 +17,17 @@ function Food( { posts } ) {
 			<div>
 				<h1>{ title }</h1>
 				<hr/>
-				{ posts.map( post => {
-					return (
-						<Post
-							key={ post.id }
-							post={ post }
-							slugBase="food"
-						/>
-					);
-				} ) }
+				<div className={ styles.postList }>
+					{ posts.map( post => {
+						return (
+							<Post
+								key={ post.id }
+								post={ post }
+								slugBase="food"
+							/>
+						);
+					} ) }
+				</div>
 			</div>
 		</>
 	);

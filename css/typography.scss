@@ -15,6 +15,30 @@ h6 {
 	font-weight: var(--font-weight-heading);
 }
 
+h1 {
+	font-size: 300%;
+}
+
+h2 {
+	font-size: 200%;
+}
+
+h3 {
+	font-size: 175%;
+}
+
+h4 {
+	font-size: 150%;
+}
+
+h5 {
+	font-size: 125%;
+}
+
+h6 {
+	font-size: 110%;
+}
+
 h1,
 h2,
 h3,
@@ -55,4 +79,5 @@ button svg {
 
 hr {
 	border-color: var(--color-main);
+	margin: 2rem 0;
 }

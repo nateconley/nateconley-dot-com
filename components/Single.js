@@ -1,19 +1,9 @@
 import Image from 'next/image';
 import styles from './Single.module.scss';
 import Head from 'next/head';
+import { formatDate } from '../helpers';
 
 function Single({ post }) {
-
-	const dateObj = new Date( post.date );
-	const dateString = new Intl.DateTimeFormat(
-		'en-US',
-		{
-			month: 'long',
-			day: 'numeric',
-			year: 'numeric',
-		}
-	).format( dateObj );
-
 	return (
 		<>
 			<Head>
@@ -22,7 +12,7 @@ function Single({ post }) {
 			</Head>
 			<div className={ styles.post }>
 				<h1>{ post.title }</h1>
-				<p>{ dateString }</p>
+				<p>{ formatDate( post.date ) }</p>
 				{ post.featuredImage.node.uri &&
 					<div className={ styles.featuredImage }>
 						<Image

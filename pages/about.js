@@ -56,6 +56,8 @@ function About() {
 
 				<h2 id="home-cook">Home Cook Nate</h2>
 				<p>I started cooking as a kid, using the toaster and microwave to make some of my favorite childhood snacks. Throught the years I have binged food-related content and have started collecting cookbooks, appliances, and other cooking gear.</p>
+				<p>I am largely self taught with books and videos. My "professional" kitchen experience amounts to my high school job at a McDonald's and my college job when I worked the fryer and delivered food for a "Chinese" restaurant.</p>
+				<p>A turning point in my journey as a home cook was the first season of <em>Mind of a Chef</em>. That show changed the way I viewed food and cooking.</p>
 				<p>I love everything from Julia Child and Jacques Pepin recipes, to cooking brisket or pizza outdoors.</p>
 
 			</div>

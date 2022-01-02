@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Post.module.scss';
+import { formatDate } from '../helpers';
 
 function Post( { post, slugBase, showExcerpt = true } ) {
 	return (
@@ -10,16 +11,18 @@ function Post( { post, slugBase, showExcerpt = true } ) {
 					<Image
 						src={ `https://backend.nateconley.com${ post.featuredImage.node.uri }` }
 						alt={ post.featuredImage.node.altText }
-						width="300"
-						height="200"
+						width="450"
+						height="300"
 						layout="responsive"
 					/>
 				</div>
 			}
 			<div>
 				<h4>{ post.title }</h4>
+				<p className={ styles.date }><small>{ formatDate( post.date ) }</small></p>
 				{ showExcerpt &&
 					<div
+						className={ styles.excerpt }
 						dangerouslySetInnerHTML={{ __html: post.excerpt }}
 					/>
 				}
