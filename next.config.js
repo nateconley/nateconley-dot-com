@@ -3,7 +3,13 @@ const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
 let securityHeaders = [
 	{
 		key  : 'Content-Security-Policy',
-		value: "default-src 'self' backend.nateconley.com; script-src 'self' 'unsafe-inline'; style-src 'self' fonts.googleapis.com 'unsafe-inline'; font-src fonts.gstatic.com; object-src 'none'; img-src 'self' data:;",
+		value: [
+			"default-src 'self' backend.nateconley.com www.google-analytics.com",
+			"script-src 'self' 'unsafe-inline' www.googletagmanager.com",
+			"style-src 'self' fonts.googleapis.com 'unsafe-inline'",
+			"font-src fonts.gstatic.com; object-src 'none'",
+			"img-src 'self' data: www.googletagmanager.com"
+		].join(';'),
 	},
 ];
 
