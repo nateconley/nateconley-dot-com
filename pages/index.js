@@ -39,14 +39,16 @@ export async function getStaticProps( context ) {
 	const codeQuery = await client.query( {
 		query: GET_CODE,
 		variables: {
-			num: 4,
+			num  : 4,
+			after: '',
 		},
 	} );
 
 	const foodQuery = await client.query( {
 		query: GET_FOOD,
 		variables: {
-			num: 4,
+			num  : 4,
+			after: '',
 		},
 	} );
 
