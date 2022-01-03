@@ -31,6 +31,7 @@ function Contact() {
 					</div>
 					<div>
 						<form className={ styles.form } method="POST" name="contact" action="/success" data-netlify="true">
+							<input type="hidden" name="form-name" value="contact"/>
 							<p>
 								<label htmlFor="contact-name" name="name">Name <span className={ styles.required } title="Required Field">*</span></label>
 								<input name="name" id="contact-name" type="text" placeholder="Name" required="true"/>
