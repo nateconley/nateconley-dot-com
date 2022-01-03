@@ -5,7 +5,6 @@
   - Archive top
   - Archive cards
   - Single Post
-- Favicon
 - Previews
 - Static pagination
 - Static posts
