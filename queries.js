@@ -2,8 +2,44 @@ import { gql } from "@apollo/client";
 
 // Get code posts.
 const GET_CODE = gql`
-	query Code($num: Int!) {
-		posts(first: $num) {
+	query Code($num: Int!, $after: String!) {
+		posts(first: $num, after: $after) {
+			pageInfo {
+				hasNextPage
+				hasPreviousPage
+				startCursor
+			}
+			edges {
+				cursor
+			}
+			nodes {
+				id
+				title
+				slug
+				excerpt
+				date
+				featuredImage {
+					node {
+					altText
+					uri
+					}
+				}
+			}
+		}
+	}
+`;
+
+const GET_CODE_BACKWARD = gql`
+	query Code($num: Int!, $before: String!) {
+		posts(last: $num, before: $before) {
+			pageInfo {
+				hasNextPage
+				hasPreviousPage
+				startCursor
+			}
+			edges {
+				cursor
+			}
 			nodes {
 				id
 				title
@@ -23,8 +59,44 @@ const GET_CODE = gql`
 
 // Get food posts.
 const GET_FOOD = gql`
-	query Food($num: Int!) {
-		foods(first: $num) {
+	query Food($num: Int!, $after: String!) {
+		foods(first: $num, after: $after) {
+			pageInfo {
+				hasNextPage
+				hasPreviousPage
+				startCursor
+			}
+			edges {
+				cursor
+			}
+			nodes {
+				id
+				title
+				slug
+				excerpt
+				date
+				featuredImage {
+					node {
+					altText
+					uri
+					}
+				}
+			}
+		}
+	}
+`;
+
+const GET_FOOD_BACKWARD = gql`
+	query Food($num: Int!, $before: String!) {
+		foods(last: $num, before: $before) {
+			pageInfo {
+				hasNextPage
+				hasPreviousPage
+				startCursor
+			}
+			edges {
+				cursor
+			}
 			nodes {
 				id
 				title
@@ -78,4 +150,4 @@ const GET_SINGLE_FOOD = gql`
 	}
 `;
 
-export { GET_CODE, GET_FOOD, GET_SINGLE_CODE, GET_SINGLE_FOOD };
+export { GET_CODE, GET_CODE_BACKWARD, GET_FOOD, GET_FOOD_BACKWARD, GET_SINGLE_CODE, GET_SINGLE_FOOD };

@@ -1,10 +1,11 @@
 import client from '../apollo-client';
-import { GET_FOOD } from '../queries';
+import { GET_FOOD, GET_FOOD_BACKWARD } from '../queries';
 import Head from 'next/head';
+import Link from 'next/link';
 import Post from '../components/Post';
 import styles from './Archive.module.scss';
 
-function Food( { posts } ) {
+function Food( { posts, pageInfo, edges } ) {
 
 	const title = 'Posts on Food';
 
@@ -28,24 +29,51 @@ function Food( { posts } ) {
 						);
 					} ) }
 				</div>
+				{ ( pageInfo.hasPreviousPage || pageInfo.hasNextPage ) &&
+					<nav className={ styles.pagination }>
+						<ul>
+						{ pageInfo.hasPreviousPage &&
+							<li>
+								<Link href={ `/food?before=${ edges[0].cursor }` }>
+									<a>Previous Page</a>
+								</Link>
+							</li>
+						}
+						{ pageInfo.hasNextPage &&
+							<li>
+								<Link href={ `/food?after=${ edges[ edges.length - 1 ].cursor }` }>
+									<a>Next Page</a>
+								</Link>
+							</li>
+						}
+						</ul>
+					</nav>
+				}
 			</div>
 		</>
 	);
 }
 
-export async function getStaticProps( context ) {
+Food.getInitialProps = async( context ) => {
+
+	const before = 'before' in context.query ? context.query.before: '';
+	const after  = 'after' in context.query ? context.query.after: '';
+
+	const query = 'before' in context.query ? GET_FOOD_BACKWARD : GET_FOOD;
 
 	const { data } = await client.query( {
-		query: GET_FOOD,
+		query: query,
 		variables: {
-			num: 8,
+			num   : 6,
+			before: before,
+			after : after,
 		},
 	} );
 
 	return {
-		props: {
-			posts: data.foods.nodes,
-		},
+		posts   : data.foods.nodes,
+		pageInfo: data.foods.pageInfo,
+		edges   : data.foods.edges,
 	};
 }
 

@@ -1,6 +1,5 @@
 # TODO
 
-- Add pagination to archives
 - Add Category Archives
 - Add Category to:
   - Archive top
@@ -8,3 +7,5 @@
   - Single Post
 - Favicon
 - Previews
+- Static pagination
+- Static posts

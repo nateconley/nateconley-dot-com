@@ -23,3 +23,33 @@
 		}
 	}
 }
+
+.pagination {
+
+	ul {
+		display: flex;
+		justify-content: center;
+		list-style: none;
+		margin-top: 1rem;
+		padding: 0;
+
+		li {
+			margin: 0 1rem;
+		}
+
+		a {
+			background-color: var(--color-main);
+			color: var(--color-white);
+			display: block;
+			font-size: 125%;
+			padding: 1rem 2rem;
+			text-decoration: none;
+
+			&:active,
+			&:focus,
+			&:hover {
+				background-color: var(--color-accent);
+			}
+		}
+	}
+}
