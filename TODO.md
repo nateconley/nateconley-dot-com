@@ -6,6 +6,5 @@
   - Archive top
   - Archive cards
   - Single Post
-- Add form
 - Favicon
 - Previews

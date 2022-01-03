@@ -3,6 +3,7 @@ import styles from './Footer.module.scss';
 import GitHub from './icons/github';
 import Instagram from './icons/instagram';
 import LinkedIn from './icons/linkedin';
+import Twitter from './icons/twitter';
 
 function Footer() {
 	return <footer className={ styles.footer }>
@@ -55,6 +56,11 @@ function Footer() {
 					<li>
 						<a href="https://github.com/nateconley" target="_blank" rel="me">
 							<GitHub/>
+						</a>
+					</li>
+					<li>
+						<a href="https://twitter.com/NateConley123" target="_blank" rel="me">
+							<Twitter/>
 						</a>
 					</li>
 				</ul>
