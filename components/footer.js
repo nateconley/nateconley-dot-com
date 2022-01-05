@@ -36,6 +36,11 @@ function Footer() {
 							<a>Contact</a>
 						</Link>
 					</li>
+					<li>
+						<Link href="/dough">
+							<a>Dough Calculator</a>
+						</Link>
+					</li>
 				</ul>
 			</nav>
 		</div>

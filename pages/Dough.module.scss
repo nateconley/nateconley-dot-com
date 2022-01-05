@@ -1,0 +1,28 @@
+@use '../css/mixins' as *;
+
+.calculator {
+
+	label {
+		@include a11y-hide();
+	}
+
+	table {
+		border-collapse: collapse;
+		padding: var(--padding-default);
+		text-align: left;
+	}
+
+	td,
+	th {
+		padding: 12px;
+	}
+
+	thead,
+	tbody > tr:first-child {
+		border-bottom: 2px solid var(--color-main);
+	}
+
+	tfoot {
+		border-top: 2px solid var(--color-main);
+	}
+}
