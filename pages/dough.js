@@ -81,9 +81,14 @@ function Dough( props ) {
 					return ingredient;
 				} );
 
+				// Recalculate flour. It is possible that the total does now add up.
+				const flourRecalculated = total - ingredients.reduce( ( prev, next ) => {
+					return prev + Number.parseFloat( next.weight );
+				}, 0 );
+
 				return {
 					...previousState,
-					flour      : flour,
+					flour      : flourRecalculated,
 					ingredients: ingredients,
 					total      : total,
 				};
